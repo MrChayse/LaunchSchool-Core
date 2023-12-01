@@ -1,0 +1,9 @@
+{
+    "greetings": "Howdy! Welcome to the Mortgage Calculator!",
+    "askLoanAmount": "Please provide your total Loan Amount",
+    "askInterest": "Please provide the Annual Percentage Rate.",
+    "askLoanDuration": "Please provide the length of your loan in years.",
+    "invalidVal": "Please provide a number greater than 0.",
+    "askNewCalculation": "Would you like to Calculate another mortgage? (y,n)",
+    "invalidNewCalculation": "Please provide a valid input."    
+}

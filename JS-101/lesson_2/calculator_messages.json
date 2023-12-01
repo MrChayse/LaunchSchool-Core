@@ -1,0 +1,15 @@
+
+{
+	"English": {
+		"welcome": "Welcome to calculator! Enter your name:",
+		"validName": "Make sure to enter a valid name."
+	},
+	"Spanish": {
+		"welcome": "Bienvenido a la calculadora! Entre su nombre:",
+		"validName": "Asegúrese de entrar un nombre válido."
+	},
+	"Russian": {
+		"welcome":"Добро пожаловать в Калькулятор! Введите ваше имя:",
+		"validName":"Пожалуйста, убедитесь, что вы ввели корректное имя."
+	}    
+}
