@@ -30,6 +30,7 @@ const vowelChainMax = (string, i = 0, j = 0, output = 0) => {
   return vowelChainMax(string, j, j + 1, output);
 }
 
+//console.log('codewarriors'.split(/[^aeiou]/).reduce((acc, curr) => Math.max(acc, curr.length), 0));
 
 console.log(vowelChainMax("codewarriors"));
 console.log(vowelChainMax("suoidea"));
@@ -38,9 +39,6 @@ console.log(vowelChainMax("strengthlessnesses"));
 console.log(vowelChainMax("cuboideonavicuarre"));
 console.log(vowelChainMax("chrononhotonthuooaos"));
 console.log(vowelChainMax("iiihoovaeaaaoougjyaw"));
-
-
-
 
 console.log(solve("codewarriors"));
 console.log(solve("suoidea"));
