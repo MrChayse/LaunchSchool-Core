@@ -18,11 +18,20 @@ while i is less than j multiply the values to together as numbers not strings.
 assign max by using the Math.max function.
 */
 
-const greatestProduct = (nums, i = 0, j = i + 5, max = -Infinity) => {
-  if (i === nums.length - 4) return max;
+// const greatestProduct = (nums, i = 0, j = i + 5, max = -Infinity) => {
+//   if (i === nums.length - 5) return max;
 
-  max = Math.max(max, [...nums].slice(i, j).reduce((acc, curr) => acc *= Number(curr), 1));
-  return greatestProduct(nums, i + 1, j + 1, max);
+//   max = Math.max(max, [...nums].slice(i, j).reduce((acc, curr) => acc *= Number(curr), 1));
+//   console.log(max);
+//   return greatestProduct(nums, i + 1, j + 1, max);
+// }
+
+const greatestProduct = (nums) => {
+  return [...nums].reduce((acc, curr, index, arr) => {
+    if ( index > nums.length - 5) return acc;
+    let product = arr.slice(index, index + 5).reduce((product, num) => product * Number(num), 1);
+    return Math.max(acc, product);
+  }, 0)
 }
 
 console.log(greatestProduct("123834539327238239583"));
