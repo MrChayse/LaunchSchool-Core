@@ -1,34 +1,28 @@
 /*
 Input: number
-Output: The number rotated the maximum number of times.
+Output: The number with each digit rotated to the left the max amount of times.
+  735291 -> 352917 -> 329175 -> 321759 -> 321597 -> 321579
+  the number is rotated it's length amount of times.
 Algorithm:
-initialize a variable i to the value of 0
-convert the input number to a string data type
-move the value at index i to the back of the number
-increment the value of i 
-if the value of i is equal to the number strings length, return the
-  number string converted to a number.
-Code:
-recursively call the rotateRighmostDigits function until the index value
-  is equal to the length of the input number.
+convert the input number to a string
+convert the string to an array
+move the current element to the back of the array
+if the current element is the last element, return the array converted to a number
 */
-const rotateRightmostDigits = (num, count) => {
-    const strNum = num.toString().split('');
-    const rotateNum = strNum.splice(strNum.length - count);
-    return Number([...strNum, ...[rotateNum.slice(1), rotateNum[0]].flat()].join(''));
+
+  const maxRotation = (num, i = 0) => {
+    let output = [...num.toString()];
+  
+    if (i === output.length - 1) return Number(output.join(''));
+  
+    const rotate = output.splice(i);
+    output = Number(output.concat(rotate.slice(1), rotate[0]).join(''));
+  
+    return maxRotation(output, i + 1);
   }
-   
-
-const maxRotation = (num, i = 0) => {
-  let numStr = num.toString().split('');
-  if (i === numStr.length - 1) return Number(numStr.join(''));
-
-  numStr = rotateRightmostDigits(Number(numStr.join('')), numStr.length - i);
-  return maxRotation(numStr, i + 1);
-}
-
-console.log(maxRotation(735291)); // 321579
-console.log(maxRotation(3));
-console.log(maxRotation(35));
-console.log(maxRotation(105));
-console.log(maxRotation(8703529146));
+  
+  console.log(maxRotation(735291));
+  console.log(maxRotation(3));
+  console.log(maxRotation(35));
+  console.log(maxRotation(105));
+  console.log(maxRotation(8703529146));
